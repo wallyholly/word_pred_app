@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(tm)\n#setwd(\"C:/R_Dat/capstone/shiny_app\")\na<-load(\"trigram.RData\")\ntext_manipulation <- function(input) {\n  ################################### \n  # Processing input for prediction #\n  ###################################\n  \n  ### clean the input from special characters\n  ### ----------------------------------------\n  input <- gsub(\"[^A-Za-z ]\",\"\",input)\n  input <- tolower(input)   \n  \n  ### compose input for prediction\n  ### ----------------------------------------\n  input <- strsplit(input, \" \")                           # split into words\n  input <- unlist(input)                                  # extract words out of list into vector\n  input <- rev(input)                                     # put in reverse order; need last words to predict\n  input3 <- paste(input[3],input[2],input[1],sep = ' ')   # compose last 3 words for trigram \n  input2 <- paste(input[2],input[1],sep = ' ')            # compose last 2 words for bigram\n  input1   <- input[1]                                    # get last word\n  \n  ### predict\n  ### ----------------------------------------\n  index2      <-grepl(paste0(\"^\",input1,\"$\"),gram2$input) # index of entry, if bigram exists\n  index3      <-grepl(paste0(\"^\",input2,\"$\"),gram3$input) # index of entry, if trigram exists\n  \n  if(sum(index3) > 0 )                                    # if trigram exists, then do:\n  { \n    pred_word_bi  <-gram2[index2,]                        # get row of bigram\n    pred_word_tri <-gram3[index3,]                        # get row of trigram\n    \n    if((pred_word_bi$s*0.4) > pred_word_tri$s)            # if PROB(.4*bigram) > PROB(trigram) (stupid backoff) then do:  \n    {\n      return(pred_word_bi$output)                         # output prediction of bigram\n    }\n    else                                                  # else:\n    {\n      return(pred_word_tri$output)                        # output prediction of trigram\n    }    \n  }\n  else                                                    # if no trigram exists then do:\n  {\n    if(sum(index2) > 0)                                   # if bigram exists then do:\n    {\n      pred_word_bi    <-gram2[index2,]                    # get row of bigram\n      return(pred_word_bi$output)                         # output prediction of bigram \n    } \n    else                                                  # if no bigram exists then do\n    {\n      return(gram1[1]$unigram)                            # output prediction of word\n    }\n  }\n}\n\n\nshinyServer(\n  function(input, output) {\n    output$inputValue <- renderPrint({input$input})\n    output$manipulated <- renderPrint({text_manipulation(input$input)})\n  }\n)\n",
+    "created" : 1460885204784.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2509657584",
+    "id" : "55295075",
+    "lastKnownWriteTime" : 1461004345,
+    "last_content_update" : 1461004345172,
+    "path" : "C:/R_Dat/capstone/shiny_app/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

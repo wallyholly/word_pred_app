@@ -1,0 +1,9 @@
+name: shiny_app
+account: wallyholly
+server: shinyapps.io
+appId: 95538
+bundleId: 423823
+url: https://wallyholly.shinyapps.io/shiny_app/
+when: 1461003668.18199
+asMultiple: FALSE
+asStatic: FALSE
