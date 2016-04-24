@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1461492500510.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A4EC4994",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1461492500510,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "fcnex4gki0",
+        "caption" : "gram3",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=gram3&cache_key=fcnex4gki0",
+        "displayedObservations" : 3632608,
+        "environment" : "",
+        "object" : "gram3",
+        "totalObservations" : 3632608,
+        "variables" : 4
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

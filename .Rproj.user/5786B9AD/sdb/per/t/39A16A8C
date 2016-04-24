@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shinythemes)\n\nshinyUI(\n  fluidPage(theme = shinytheme(\"united\"),\n    # Application title\n    headerPanel(\"Word prediction\"),\n    sidebarPanel(\n      h4('The use of this app is very easy!'), \n      br(),\n      h4('First choose your language (English / German)'),\n      br(),\n      h4('After that enter a phrase in the YOUR INPUT field and press the SUBMIT-button.'),\n      br(),\n      h4('Please be aware that these app supports curses ;-)',style = \"color:red\"),\n      br(),\n      selectInput(\"select\", label = \"Language\", \n                  choices = list(\"English\" = 1, \"German\" = 2)),\n      br(),\n      textInput(\"input\", \"Your Text Input\", value=\"text\"),\n      submitButton('Submit'),\n      h4(\"For information and an exploratory analysis of the underlying data \", a(\"CLICK HERE\", href=\"http://rpubs.com/wallyholly/163080\"))\n    ),\n    mainPanel(\n      h3('Results of prediction'),\n      h4('Language'),\n      verbatimTextOutput(\"language\"),\n      h4('You entered'),\n      verbatimTextOutput(\"inputValue\"),\n      h4('Predicted next word: '),\n      verbatimTextOutput(\"manipulated\")\n    )\n  )\n)\n\n\n\n\n",
+    "created" : 1461487233077.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1242995407",
+    "id" : "39A16A8C",
+    "lastKnownWriteTime" : 1461492146,
+    "last_content_update" : 1461492146636,
+    "path" : "C:/R_Dat/capstone/shiny_app/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

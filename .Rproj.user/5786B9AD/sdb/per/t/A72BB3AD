@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "if (select==\"2\") {\n  a<-load(\"trigram_DE.RData\") \n}\nelse {\n  a<-load(\"trigram.RData\") \n}\n",
+    "created" : 1461488951132.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3435461095",
+    "id" : "A72BB3AD",
+    "lastKnownWriteTime" : 1461491317,
+    "last_content_update" : 1461491317637,
+    "path" : "C:/R_Dat/capstone/shiny_app/help.R",
+    "project_path" : "help.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

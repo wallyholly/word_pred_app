@@ -1,6 +1,9 @@
 library(tm)
 #setwd("C:/R_Dat/capstone/shiny_app")
 a<-load("trigram.RData")
+
+
+
 text_manipulation <- function(input) {
   ################################### 
   # Processing input for prediction #
